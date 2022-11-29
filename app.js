@@ -103,6 +103,11 @@ app.post("/:requestedList", (req, res) => {
     }
 })
 
+let port2 = process.env.PORT;
+if (port2 == null || port2 == "") {
+  port2 = 3000;
+}
+app.listen(port2);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
