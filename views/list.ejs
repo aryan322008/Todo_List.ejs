@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1 id="heading"><%=listSource%></h1>
+    <ul class="box">
+        <% newListItem.forEach(element => { %>
+            <% let ele = "something" %> <!--you can use a variable also-->
+<!--an ejs variables can be iterated if it's a array and also its element can be used in place of that variable-->
+<div>
+            <li class="item">
+                <a href="/<%=element%>"><p><%=element%></p></a> 
+            </li>
+        <% }) %>
+        </div>
+
+</body>
+
+</html>
+
+    

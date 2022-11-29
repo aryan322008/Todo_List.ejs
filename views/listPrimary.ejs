@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <h1 id="heading"><%=listSource%></h1>
+    <ul class="box">
+        <% newListItem.forEach(element => { %>
+            <% let ele = "something" %> <!--you can use a variable also-->
+<!--an ejs variables can be iterated if it's a array and also its element can be used in place of that variable-->
+<div>
+            <li class="item">
+                <input type="checkbox" name="checker" id="checkerId">
+                <p><%=element.name%></p> 
+                <form action="/<%=listSource%>" method="post" style="position:absolute; right: 15px;">
+                <button style="border: none;
+                background: no-repeat;
+                color: grey;
+                font-size: 20px;
+                cursor: pointer;" name="type" value=<%=element.id%> >X</button>
+                </form>
+            </li>
+        <% }) %>
+        </div>
+        <form action="/<%=listSource%>" method="post">
+            <input placeholder="New List Item" type="text" name="ListItem" id="listli">
+            <button id="btn" value="add" name="type" type="submit">+</button>
+        </form>
+
+    </ul>
+
+</body>
+</html>
+
+<!-- Note :- when the parent element is positioned relative and its interior element is absolute then the absoilute postioning will be relative to the parent element -->
+
