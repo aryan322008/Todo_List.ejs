@@ -7,7 +7,7 @@ const app = express()
 const body = require('body-parser');
 const { initial, forEach } = require('lodash');
 const datePrimary = require(__dirname + '/date.js')
-const port = 3000
+// const port = 3000
 let listName = []
 let PageType = ""
 let arr2 = [];
@@ -103,13 +103,12 @@ app.post("/:requestedList", (req, res) => {
     }
 })
 
-let port2 = process.env.PORT;
-if (port2 == null || port2 == "") {
-  port2 = 3000;
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
 }
-app.listen(port2);
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 // Not done Templating pratical of copying small snippet code in ejs templet and then using it in all the file that require the same thing.
 
